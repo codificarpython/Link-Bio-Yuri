@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Yuri Liporaci - Links | Cirurgião Dentista</title>
+    <meta name="description" content="Todos os links do Dr. Yuri Liporaci - Cirurgião Dentista. Agende sua consulta!">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #F8FAFC;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Fundo animado com formas geométricas */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(245, 158, 11, 0.06) 0%, transparent 50%);
+            animation: moveBackground 20s ease-in-out infinite;
+            z-index: 0;
+        }
+        
+        @keyframes moveBackground {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-5%, -5%) rotate(180deg); }
+        }
+        
+        /* Partículas decorativas */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: linear-gradient(135deg, #6366F1, #10B981);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: floatParticle 15s infinite ease-in-out;
+        }
+        
+        .particle:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { top: 60%; left: 85%; animation-delay: 2s; }
+        .particle:nth-child(3) { top: 80%; left: 20%; animation-delay: 4s; }
+        .particle:nth-child(4) { top: 40%; left: 70%; animation-delay: 1s; }
+        .particle:nth-child(5) { top: 10%; left: 50%; animation-delay: 3s; }
+        
+        @keyframes floatParticle {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            25% { transform: translateY(-20px) translateX(10px); }
+            50% { transform: translateY(-40px) translateX(-10px); }
+            75% { transform: translateY(-20px) translateX(10px); }
+        }
+        
+        .container {
+            max-width: 680px;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Profile Card com Glassmorphism */
+        .profile-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 3rem 2rem 2rem;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.08),
+                0 0 1px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #6366F1, #10B981, #F59E0B);
+            background-size: 200% 100%;
+            animation: gradientMove 3s ease infinite;
+        }
+        
+        @keyframes gradientMove {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        /* Profile */
+        .profile {
+            text-align: center;
+            animation: fadeIn 1s ease-out 0.2s both;
+        }
+        
+        .profile-image-wrapper {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .profile-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(135deg, #6366F1, #10B981, #F59E0B);
+            border-radius: 50%;
+            animation: rotateGradient 3s linear infinite;
+            z-index: -1;
+        }
+        
+        @keyframes rotateGradient {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .profile-image {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 6px solid white;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s;
+        }
+        
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .verified-badge {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #6366F1, #8B5CF6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            border: 3px solid white;
+        }
+        
+        .profile h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #1E293B, #334155);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+        
+        .profile .title {
+            font-size: 1.1rem;
+            color: #64748B;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .profile .title i {
+            color: #10B981;
+            font-size: 1rem;
+        }
+        
+        .profile .bio {
+            font-size: 1rem;
+            color: #64748B;
+            line-height: 1.7;
+            max-width: 500px;
+            margin: 0 auto 1.5rem;
+        }
+        
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #E2E8F0;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #6366F1, #10B981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.85rem;
+            color: #94A3B8;
+            font-weight: 600;
+            margin-top: 0.2rem;
+        }
+        
+        /* Links Section */
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .link-item {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 1.4rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            text-decoration: none;
+            color: #1E293B;
+            font-weight: 600;
+            font-size: 1.05rem;
+            box-shadow: 
+                0 4px 20px rgba(0, 0, 0, 0.06),
+                0 0 1px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            animation: slideUp 0.6s ease-out both;
+        }
+        
+        .link-item:nth-child(1) { animation-delay: 0.3s; }
+        .link-item:nth-child(2) { animation-delay: 0.4s; }
+        .link-item:nth-child(3) { animation-delay: 0.5s; }
+        .link-item:nth-child(4) { animation-delay: 0.6s; }
+        .link-item:nth-child(5) { animation-delay: 0.7s; }
+        .link-item:nth-child(6) { animation-delay: 0.8s; }
+        .link-item:nth-child(7) { animation-delay: 0.9s; }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .link-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #6366F1 0%, #10B981 100%);
+            transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 20px;
+        }
+        
+        .link-item:hover::before {
+            left: 0;
+        }
+        
+        .link-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 
+                0 20px 40px rgba(99, 102, 241, 0.15),
+                0 0 1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .link-item:active {
+            transform: translateY(-4px) scale(0.98);
+        }
+        
+        .link-item:hover .link-icon,
+        .link-item:hover .link-text,
+        .link-item:hover .link-description,
+        .link-item:hover .link-arrow {
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .link-icon {
+            font-size: 1.6rem;
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #F1F5F9, #E2E8F0);
+            color: #6366F1;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.4s;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.1);
+        }
+        
+        .link-item:hover .link-icon {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transform: rotate(5deg) scale(1.1);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+        }
+        
+        .link-content {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .link-text {
+            display: block;
+            transition: color 0.3s;
+            font-weight: 700;
+        }
+        
+        .link-description {
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: #94A3B8;
+            margin-top: 0.3rem;
+            transition: color 0.3s;
+        }
+        
+        .link-arrow {
+            font-size: 1.2rem;
+            color: #CBD5E1;
+            transition: all 0.4s;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .link-item:hover .link-arrow {
+            transform: translateX(8px);
+        }
+        
+        /* Featured Link - WhatsApp */
+        .link-item.featured {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+            color: white;
+            box-shadow: 
+                0 10px 30px rgba(16, 185, 129, 0.3),
+                0 0 1px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .link-item.featured .link-icon {
+            background: rgba(255, 255, 255, 0.25);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+        }
+        
+        .link-item.featured .link-text {
+            color: white;
+        }
+        
+        .link-item.featured .link-description {
+            color: rgba(255, 255, 255, 0.85);
+        }
+        
+        .link-item.featured .link-arrow {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .link-item.featured:hover {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 
+                0 25px 50px rgba(16, 185, 129, 0.4),
+                0 0 1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .link-item.featured:hover .link-icon {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(0deg) scale(1.15);
+        }
+        
+        .link-item.featured::before {
+            display: none;
+        }
+        
+        /* Pulse animation para featured */
+        .link-item.featured::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            background: rgba(16, 185, 129, 0.3);
+            transform: translate(-50%, -50%);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.05);
+                opacity: 0;
+            }
+        }
+        
+        /* Social Links */
+        .social-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 2rem;
+            box-shadow: 
+                0 4px 20px rgba(0, 0, 0, 0.06),
+                0 0 1px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            margin-top: 1.5rem;
+            animation: fadeIn 1s ease-out 1s both;
+        }
+        
+        .social-title {
+            text-align: center;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #64748B;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-link {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #F1F5F9, #E2E8F0);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6366F1;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #6366F1, #10B981);
+            opacity: 0;
+            transition: opacity 0.4s;
+            border-radius: 50%;
+        }
+        
+        .social-link:hover::before {
+            opacity: 1;
+        }
+        
+        .social-link i {
+            position: relative;
+            z-index: 1;
+            transition: all 0.4s;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 15px 35px rgba(99, 102, 241, 0.25);
+        }
+        
+        .social-link:hover i {
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: #94A3B8;
+            font-size: 0.9rem;
+            animation: fadeIn 1.2s ease-out 1.2s both;
+        }
+        
+        .footer a {
+            color: #6366F1;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .footer a:hover {
+            color: #10B981;
+        }
+        
+        /* Responsivo */
+        @media (max-width: 640px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+            
+            .profile-card {
+                padding: 2.5rem 1.5rem 1.5rem;
+                border-radius: 25px;
+            }
+            
+            .profile h1 {
+                font-size: 1.8rem;
+            }
+            
+            .profile-image-wrapper {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .link-item {
+                padding: 1.2rem 1.2rem;
+                font-size: 0.98rem;
+                border-radius: 18px;
+            }
+            
+            .link-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+            
+            .stats {
+                gap: 1.5rem;
+            }
+            
+            .stat-number {
+                font-size: 1.5rem;
+            }
+            
+            .social-link {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+        }
+        
+        /* Scroll suave */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Partículas decorativas -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <div class="container">
+        <!-- Profile Card -->
+        <div class="profile-card">
+            <div class="profile">
+                <div class="profile-image-wrapper">
+                    <div class="profile-image">
+                        <img src="Yuri.jpg" alt="Dr. Yuri Liporaci" style="border-radius: 50%;">
+                    </div>
+                    <div class="verified-badge">
+                        <i class="fas fa-check"></i>
+                    </div>
+                </div>
+                <h1>Dr. Yuri Liporaci</h1>
+                <p class="title">
+                    <i class="fas fa-user-md"></i>
+                    Cirurgião Dentista
+                </p>
+                <p class="bio">
+                   O Dr. Yuri atua com dedicação especial em Implantodontia, cirurgia oral menor (extrações) e lentes de contato em cerâmica, unindo técnica, precisão e sensibilidade estético-funcional para devolver sorrisos e transformar vidas. Sua missão vai além da saúde bucal: é proporcionar bem-estar, confiança e a realização de sonhos por meio de sorrisos verdadeiramente transformadores. ✨
+                </p>
+                
+                <!-- Stats -->
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Pacientes</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5.0</span>
+                        <span class="stat-label">Avaliação</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2+</span>
+                        <span class="stat-label">Anos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Links -->
+        <div class="links">
+            <!-- Featured Link - WhatsApp -->
+            <a href="https://wa.me/5521999333991" class="link-item featured" target="_blank">
+                <div class="link-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="link-content">
+                    <span class="link-text">Agendar Consulta no WhatsApp</span>
+                    <span class="link-description">Atendimento rápido e personalizado</span>
+                </div>
+                <i class="fas fa-arrow-right link-arrow"></i>
+            </a>
+            
+            <!-- Regular Links -->
+            <a href="https://institutoliporaci.com.br" class="link-item" target="_blank">
+                <div class="link-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <div class="link-content">
+                    <span class="link-text">Site Oficial</span>
+                    <span class="link-description">Conheça todos os tratamentos</span>
+                    
+                </div>
+                <i class="fas fa-arrow-right link-arrow"></i>
+            </a>
+            
+            <a href="https://instagram.com/institutoliporaci" class="link-item" target="_blank">
+                <div class="link-icon">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <div class="link-content">
+                    <span class="link-text">Instagram</span>
+                    <span class="link-description">Veja transformações reais</span>
+                </div>
+                <i class="fas fa-arrow-right link-arrow"></i>
+            </a>
+            
+           
+            <a href="https://maps.app.goo.gl/TiqiHf4SJjBn5oaR8" class="link-item" target="_blank">
+                <div class="link-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="link-content">
+                    <span class="link-text">Localização do Consultório</span>
+                    <span class="link-description">Veja como chegar</span>
+                </div>
+                <i class="fas fa-arrow-right link-arrow"></i>
+            </a>
+        </div>
+        
+        <!-- Social Section -->
+        <div class="social-section">
+            <div class="social-title">Siga nas Redes Sociais</div>
+            <div class="social-links">
+                <a href="https://instagram.com/institutoliporaci" class="social-link" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+               
+                <a href="https://wa.me/5521999333991" class="social-link" target="_blank" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="mailto:contato@yuriliporaci.com.br" class="social-link" target="_blank" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2026 Dr. Yuri Liporaci - Todos os direitos reservados</p>
+        </div>
+    </div>
+
+    <script>
+        // Efeito de clique nos links
+        document.querySelectorAll('.link-item').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const ripple = document.createElement('div');
+                ripple.style.position = 'absolute';
+                ripple.style.borderRadius = '50%';
+                ripple.style.background = 'rgba(255, 255, 255, 0.6)';
+                ripple.style.width = '20px';
+                ripple.style.height = '20px';
+                ripple.style.pointerEvents = 'none';
+                
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left - 10;
+                const y = e.clientY - rect.top - 10;
+                
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.style.transition = 'all 0.6s';
+                    ripple.style.width = '200px';
+                    ripple.style.height = '200px';
+                    ripple.style.opacity = '0';
+                    ripple.style.transform = 'translate(-90px, -90px)';
+                }, 10);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Parallax suave no mouse
+        document.addEventListener('mousemove', (e) => {
+            const particles = document.querySelectorAll('.particle');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            particles.forEach((particle, index) => {
+                const speed = (index + 1) * 0.5;
+                const xMove = (x - 0.5) * speed * 20;
+                const yMove = (y - 0.5) * speed * 20;
+                
+                particle.style.transform = `translate(${xMove}px, ${yMove}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
